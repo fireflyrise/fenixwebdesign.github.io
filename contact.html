@@ -269,6 +269,22 @@
         let currentStep = 1;
         const totalSteps = 2;
 
+        function formatPhoneNumber(value) {
+            if (!value) return value;
+            const phoneNumber = value.replace(/[^\d]/g, '');
+            const phoneNumberLength = phoneNumber.length;
+            if (phoneNumberLength < 4) return phoneNumber;
+            if (phoneNumberLength < 7) {
+                return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+            }
+            return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
+        }
+
+        document.getElementById('phone').addEventListener('input', function(e) {
+            const formattedInputValue = formatPhoneNumber(e.target.value);
+            e.target.value = formattedInputValue;
+        });
+
         function updateProgress() {
             const progressPercentage = (currentStep / totalSteps) * 100;
             document.getElementById('progressBarFill').style.width = progressPercentage + '%';
