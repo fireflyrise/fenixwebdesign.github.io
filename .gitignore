@@ -1,0 +1,17 @@
+# Environment variables — NEVER commit this
+.env
+.env.local
+.env.*
+
+# Generated images (re-run generate_images.py to recreate)
+# Remove this line if you want to commit images
+# images/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
