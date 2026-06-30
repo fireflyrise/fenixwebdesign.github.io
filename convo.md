@@ -79,8 +79,50 @@ page HTML comes in later instructions).
 - Modal webhook empty → modal shows success state locally so UX is testable;
   marked clearly for REPLACE in js/main.js.
 
+### Session 2 (2026-06-30) — Instruction 2 of 4: Homepage ✅
+Built the root `index.html` (full 10-section layout) themed on "Home Services
+Digital Marketing Agency", visitor-first direct-response copy throughout.
+
+**Created/updated:**
+- `index.html` — complete homepage:
+  - `<head>`: title (`Fenix Web Design | Home Services Digital Marketing Agency`),
+    meta description/keywords, canonical, robots, inline SVG favicon + apple-touch
+    (generated "F" on `#ff6b35`), full Open Graph + Twitter card (og-image.webp
+    1200x630), ProfessionalService JSON-LD (telephone +16028290009, email in
+    schema only, areaServed United States, knowsAbout = 6 services).
+  - Nav: Home | Services ▾ (6 service links) | About Us ▾ (About Us→`/#about-us`,
+    Privacy Policy, Terms & Conditions).
+  - Hero: H1 = SEO service name (NOT business name), headline "Get More Calls,
+    Booked Jobs, and Trucks on the Road", 2 CTAs (tel + modal).
+  - Why Us (3 cards: phone-as-only-metric, no contracts, trades-focused).
+  - About Us (`id="about-us"`) with ONE contextual in-copy link to `/`
+    (anchor "home services marketing") — hub-and-spoke.
+  - Reviews (3 generated, each wrapped in REPLACE comment; Dancing Script names).
+  - Banner (primary bg): tel + modal CTAs.
+  - Services (4 cards → Website Design, Google Ads, Roofing, Plumbing, each
+    btn-secondary deep-link to its service folder).
+  - Steps (3) · FAQs (6, accordion) · Footer Layout B (single column) ·
+    Mobile sticky CTA bar · 3-step lead modal (service / timeline / contact).
+- `css/styles.css` — added `.btn-banner-secondary` white-outline styling so the
+  banner's secondary CTA stays visible on the orange banner (was inheriting the
+  invisible orange-on-orange `.btn-secondary` look). Hover inverts to white bg /
+  primary text.
+
+**Validation run (all pass):** 1 H1 (= service name, not business name); 8
+sections + 73 divs balanced; 4 modal triggers + 4 `tel:` links; NO pricing /
+NO `$` / NO `mailto:`; email present ONLY inside JSON-LD schema (not visible).
+
+**Decisions:**
+- "Wire modal to configured webhook": no Pabbly URL was supplied in the brief, so
+  `MODAL_WEBHOOK_URL` stays `''` in js/main.js (graceful local success state,
+  marked REPLACE). Wire the real URL when provided.
+- Images referenced but not yet generated (hero handled by base `.hero` primary
+  bg; about-us.webp, 4 service-*.webp, og-image.webp) — to be produced in the
+  images instruction. `loading="lazy"` on all below-the-fold imgs.
+- Minimal, intentional "we/our" only in trust/CTA lines; dominant voice = reader.
+
 ## TODO — Remaining (future instructions)
-- [ ] Homepage `index.html` (10 sections, themed on main service)
+- [x] Homepage `index.html` (10 sections, themed on main service)
 - [ ] 6 service pages (`/website-design/`, `/google-ads-management/`,
       `/painting-marketing/`, `/roofing-marketing/`, `/plumbing-marketing/`,
       `/logo-design/`), each full 10-section layout + hub-and-spoke link back to `/`

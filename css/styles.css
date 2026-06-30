@@ -709,6 +709,18 @@ section {
   background-color: var(--color-hover);
   color: #ffffff;
 }
+/* Banner secondary — white outline so it stays visible on the orange banner */
+.btn-banner-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  text-decoration: none;
+}
+.btn-banner-secondary:hover {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
 @media (max-width: 700px) {
   .banner-ctas .btn-banner-primary,
   .banner-ctas .btn-banner-secondary {
