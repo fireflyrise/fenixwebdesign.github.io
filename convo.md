@@ -29,12 +29,25 @@ suffix** in H1/copy. **No pricing anywhere.** **Email only on Privacy/Terms.**
 Nav → Hero → Why Us → About Us → Reviews → Banner → Services → Steps → FAQs → Footer.
 Section bg alternation handled in CSS (Banner always primary, Footer #282828).
 
-## Current State (Instruction 1 of 4 — DONE)
-Project scaffold + design system + shared nav/footer/modal are built:
-- `index.html` — full `<head>` (SEO/OG/Twitter/schema), sticky nav with Services &
-  About Us dropdowns, **hero scaffold** (copy is placeholder-quality, refine later),
-  footer (Layout B — no map), mobile sticky CTA bar, and the full **3-step lead modal**.
-  Sections 3–9 are NOT yet on the homepage — to be added in a later step.
+## Current State
+
+### Instruction 1 of 4 — DONE
+Project scaffold + design system + shared nav/footer/modal.
+
+### Instruction 2 of 4 — DONE (homepage fully built)
+`index.html` now contains the **complete fixed 10-section layout** with finalized
+visitor-first, direct-response copy themed on "Home Services Digital Marketing Agency":
+Nav → Hero → Why Us → About Us → Reviews (3 generated, commented) → Banner →
+Services (4 cards: Website Design, Google Ads, Roofing Mktg, Plumbing Mktg, each
+linking to its page) → Steps (3) → FAQs (6) → Footer.
+- H1 = MAIN_SERVICE ("Home Services Digital Marketing Agency"), no location (national).
+- About Us has hub contextual links to /website-design/ and /google-ads-management/.
+- No pricing anywhere; phone only in tel: links; email only in JSON-LD schema.
+- Image refs point to /images/*.webp (hero-bg, about-us, 4 service cards) — NOT yet
+  generated. Hero uses inline background-image style w/ dark gradient overlay.
+- Lead modal: brief provided **no MODAL_WEBHOOK_URL**, so `MODAL_WEBHOOK_URL` in
+  js/main.js stays an empty placeholder; modal still validates + shows success.
+  Searched the whole workspace — no webhook was seeded. Swap in real URL when available.
 - `css/styles.css` — complete design system: `:root` tokens (brand palette, spacing
   scale, fonts), base/reset, heading scale, `.container`, section padding, section bg
   alternation, global buttons, nav (desktop dropdowns + mobile hamburger), hero, all
@@ -55,7 +68,7 @@ Project scaffold + design system + shared nav/footer/modal are built:
 - Accent color chosen deep teal per playbook "orange → deep teal/navy" guide.
 
 ## TODO (future instructions)
-- [ ] Homepage sections 3–9 with finalized conversion copy + generated reviews + FAQs.
+- [x] Homepage sections 3–9 with finalized conversion copy + generated reviews + FAQs.
 - [ ] Generate images (hero-bg, about-us, 4 service cards, banner, og-image) via
       Gemini per playbook Step 6.6 (manifest + scripts), reference as `.webp`.
       NOTE: this env also exposes an MCP logo/image generator — evaluate which to use.
