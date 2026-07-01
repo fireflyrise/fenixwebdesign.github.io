@@ -1,0 +1,100 @@
+{
+  "business": "Fenix Web Design",
+  "industry": "Home Services Digital Marketing Company",
+  "scope": "National (United States)",
+  "note": "Images for this build were generated with the environment's Gemini-backed image tool and saved as .png (1024x1024). If regenerating with the standard Gemini pipeline, target the aspect ratios/resolutions below and convert to .webp, then update HTML/CSS references from .png to .webp.",
+  "model": "gemini image model (env-provided) — confirm current model at ai.google.dev/gemini-api/docs/models before regenerating",
+  "images": [
+    {
+      "filename": "hero-bg.png",
+      "section": "Homepage Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic hero image for a home services digital marketing company. A confident marketing professional reviewing rising analytics dashboards and a website mockup on a large monitor in a bright modern office, warm orange accent lighting, sense of growth and momentum. Cinematic, high contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "hero-google-ads-management.png",
+      "section": "Google Ads Management Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic image representing Google Ads management for home service contractors. A search results page glowing on a laptop with an upward click-through graph and a smartphone showing an incoming call, warm modern office, orange accent light. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "hero-facebook-ads-management.png",
+      "section": "Facebook Ads Management Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic image representing Facebook and social media advertising for home service businesses. A social feed on a phone with an engaging local-business ad and rising engagement icons, homeowner scrolling, bright warm setting, orange accent light. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "hero-website-design.png",
+      "section": "Website Design Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic image of a sleek high-converting home-services website displayed across a laptop, tablet, and phone on a clean desk, warm orange accent lighting, sense of trust and professionalism. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "hero-painting-marketing.png",
+      "section": "Painting Marketing Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic image of a professional house painter in clean branded attire rolling fresh paint on a bright interior wall, crisp lines, sunlight, warm and inviting. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "hero-roofing-marketing.png",
+      "section": "Roofing Marketing Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic image of a professional roofer installing shingles on a suburban home roof under a clear blue sky, safety gear, strong and trustworthy, warm sunlight. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "hero-plumbing-marketing.png",
+      "section": "Plumbing Marketing Hero",
+      "aspect_ratio": "16:9",
+      "resolution": "2K",
+      "prompt": "Wide 16:9 photorealistic image of a professional plumber confidently working under a modern kitchen sink with clean tools, bright well-lit home, trustworthy and skilled. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "about-us.png",
+      "section": "About Us",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Square 1:1 photorealistic image of a friendly digital marketing strategist sitting with a home service business owner, pointing at a laptop showing growing leads, warm collaborative atmosphere, bright office, orange accents. High contrast, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "service-website-design.png",
+      "section": "Services card — Website Design",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Square 1:1 photorealistic close-up of a modern responsive home-services website on a laptop screen with a clean layout and a prominent call button, warm orange accent, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "service-google-ads-management.png",
+      "section": "Services card — Google Ads Management",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Square 1:1 photorealistic image of a laptop showing a search-engine results page with an upward performance graph and a ringing smartphone beside it, warm orange accent, professional. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "service-roofing-marketing.png",
+      "section": "Services card — Roofing Marketing",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Square 1:1 photorealistic image of a professional roofer on a suburban rooftop installing shingles under blue sky, strong and trustworthy, warm sunlight. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "service-plumbing-marketing.png",
+      "section": "Services card — Plumbing Marketing",
+      "aspect_ratio": "1:1",
+      "resolution": "1K",
+      "prompt": "Square 1:1 photorealistic image of a professional plumber fixing pipes under a bright modern kitchen sink with clean tools, skilled and trustworthy. No text, logos, or watermarks in the image."
+    },
+    {
+      "filename": "og-image.png",
+      "section": "OG Social Share Image",
+      "aspect_ratio": "16:9",
+      "resolution": "1K",
+      "prompt": "Wide 16:9 photorealistic social share image for a home services digital marketing company: a bright workspace with a monitor showing rising lead-generation analytics and a phone ringing with new leads, warm orange accent lighting, bold and eye-catching. High contrast, professional. No text, logos, or watermarks in the image."
+    }
+  ]
+}

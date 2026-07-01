@@ -5,8 +5,12 @@
    ===================================================================== */
 
 /* ── Config ── */
-// Pabbly Connect webhook for the lead-capture modal.
-// TODO: Replace with the real Pabbly Connect webhook URL before going live.
+// Pabbly Connect webhook for the lead-capture modal — the ONLY place to wire it.
+// Paste the Pabbly Connect (or other) webhook URL between the quotes below and the
+// modal will POST the full lead payload (see submit handler) to it automatically.
+// While empty, the modal still validates and shows the success message so no visitor
+// is ever left hanging, but the lead is NOT transmitted. Set this before going live.
+// No webhook URL was provided in the client brief, so it ships empty by design.
 var MODAL_WEBHOOK_URL = '';
 var BUSINESS_PHONE = '6028290009';
 
@@ -225,6 +229,7 @@ document.querySelectorAll('.faq-question').forEach(function (button) {
       }
 
       var fullName = overlay.querySelector('input[name="full_name"]').value.trim();
+      var phoneFormatted = overlay.querySelector('input[name="phone"]').value.trim();
       var payload = {
         source: 'hero_modal',
         business: 'Fenix Web Design',
@@ -233,7 +238,8 @@ document.querySelectorAll('.faq-question').forEach(function (button) {
         step2_question: getQuestion('step2'),
         step2_answer: getRadio('step2'),
         full_name: fullName,
-        phone: overlay.querySelector('input[name="phone"]').value.trim(),
+        phone: phoneFormatted,                       // e.g. "(602) 555-1234" — what the business sees
+        phone_digits: phoneFormatted.replace(/\D/g, ''), // e.g. "6025551234" — for click-to-call/CRM
         email: overlay.querySelector('input[name="email"]').value.trim(),
         submitted_at: new Date().toISOString()
       };
