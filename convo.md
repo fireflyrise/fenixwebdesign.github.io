@@ -1,7 +1,7 @@
 # Project Running Log — Fenix Web Design
 
 Multi-page static marketing site built per the **WebCreator playbook**
-(`../cmr153ju10002ro43r2djwz9e.webcreator-playbook.md`). Goal: convert visitors
+(`../cmr1icg6i0002ph44ioqttrp4.webcreator-playbook.md`). Goal: convert visitors
 into leads (call, message, or modal lead form). National scope — **no location
 suffix** in H1/copy. **No pricing anywhere.** **Email only on Privacy/Terms.**
 
@@ -18,12 +18,19 @@ suffix** in H1/copy. **No pricing anywhere.** **Email only on Privacy/Terms.**
 - **LOCATION_IN_FILENAMES:** no
 
 ## Service pages to build (slug = title, lowercase-hyphen, no location)
-- Website Design → `/website-design/`
+Authoritative list from CURRENT brief (order = brief order):
 - Google Ads Management → `/google-ads-management/`
+- Facebook Ads Management → `/facebook-ads-management/`
+- Website Design → `/website-design/`
 - Painting Marketing → `/painting-marketing/`
 - Roofing Marketing → `/roofing-marketing/`
 - Plumbing Marketing → `/plumbing-marketing/`
-- Logo Design → `/logo-design/`
+
+NOTE (2026-07-01): An earlier session (against a stale brief) had listed
+"Logo Design" and omitted "Facebook Ads Management". Corrected this session across
+nav dropdown, sitemap.xml, and modal step-1 options to match the current brief.
+Homepage Services section shows 4 cards (Website Design, Google Ads, Roofing,
+Plumbing) — all valid, no Logo Design.
 
 ## Fixed 10-section layout (every non-legal page)
 Nav → Hero → Why Us → About Us → Reviews → Banner → Services → Steps → FAQs → Footer.
@@ -31,8 +38,17 @@ Section bg alternation handled in CSS (Banner always primary, Footer #282828).
 
 ## Current State
 
-### Instruction 1 of 4 — DONE
-Project scaffold + design system + shared nav/footer/modal.
+### Instruction 1 of 4 — DONE (verified + service list corrected 2026-07-01)
+Project scaffold + design system + shared nav/footer/modal. This session re-read the
+full authoritative playbook and audited the existing scaffold against the CURRENT
+brief. Confirmed the `:root` palette (primary #ff6b35, hover #ff946e, accent deep
+teal #1b4d4a, full text/bg/border tokens), spacing scale, Montserrat/Open Sans/
+Dancing Script fonts, heading scale, `.container`, section padding, and white/gray
+section alternation (Banner=primary, Footer=#282828) all match the playbook. Shared
+sticky nav (logo + brand name + Services▾ + About Us▾ dropdowns, mobile hamburger),
+Footer Layout B, global buttons, and the multi-step lead modal are all in place and
+compliant. **Fix applied:** service list now matches the brief exactly (added
+Facebook Ads Management, removed the stale Logo Design) in nav, sitemap, and modal.
 
 ### Instruction 2 of 4 — DONE (homepage fully built)
 `index.html` now contains the **complete fixed 10-section layout** with finalized

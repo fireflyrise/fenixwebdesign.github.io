@@ -6,12 +6,17 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fenixwebdesign.com/website-design/</loc>
+    <loc>https://fenixwebdesign.com/google-ads-management/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fenixwebdesign.com/google-ads-management/</loc>
+    <loc>https://fenixwebdesign.com/facebook-ads-management/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://fenixwebdesign.com/website-design/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -27,11 +32,6 @@
   </url>
   <url>
     <loc>https://fenixwebdesign.com/plumbing-marketing/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://fenixwebdesign.com/logo-design/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
