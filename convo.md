@@ -7,7 +7,7 @@ suffix** in H1/copy. **No pricing anywhere.** **Email only on Privacy/Terms.**
 
 ## Client Brief (interview complete — never re-interview)
 - **Business:** Fenix Web Design
-- **Industry / homepage theme:** Home Services Digital Marketing Agency (national)
+- **Industry / homepage theme:** Home Services Digital Marketing Company (national)
 - **Phone:** 6028290009 → displayed as (602) 829-0009, only inside `tel:` links
 - **Email:** mgarcia4@gmail.com (Privacy/Terms ONLY)
 - **Domain:** fenixwebdesign.com
@@ -52,11 +52,11 @@ Facebook Ads Management, removed the stale Logo Design) in nav, sitemap, and mod
 
 ### Instruction 2 of 4 — DONE (homepage fully built)
 `index.html` now contains the **complete fixed 10-section layout** with finalized
-visitor-first, direct-response copy themed on "Home Services Digital Marketing Agency":
+visitor-first, direct-response copy themed on "Home Services Digital Marketing Company":
 Nav → Hero → Why Us → About Us → Reviews (3 generated, commented) → Banner →
 Services (4 cards: Website Design, Google Ads, Roofing Mktg, Plumbing Mktg, each
 linking to its page) → Steps (3) → FAQs (6) → Footer.
-- H1 = MAIN_SERVICE ("Home Services Digital Marketing Agency"), no location (national).
+- H1 = MAIN_SERVICE ("Home Services Digital Marketing Company"), no location (national).
 - About Us has hub contextual links to /website-design/ and /google-ads-management/.
 - No pricing anywhere; phone only in tel: links; email only in JSON-LD schema.
 - Image refs point to /images/*.webp (hero-bg, about-us, 4 service cards) — NOT yet
@@ -74,6 +74,22 @@ linking to its page) → Steps (3) → FAQs (6) → Footer.
   webhook POST). `MODAL_WEBHOOK_URL` is EMPTY — modal shows success w/o POST until set.
 - Support files: `.gitignore`, `robots.txt`, `sitemap.xml` (all pages listed).
 - Favicon: generated inline SVG "F" on #ff6b35 (no favicon supplied in brief).
+
+Session 2026-07-01 refinements (Instruction 2 re-verified):
+- Aligned MAIN_SERVICE naming to the brief's EXACT wording: "Home Services Digital
+  Marketing Company" (was "…Agency") across the H1, <title>, og:title, twitter:title,
+  and JSON-LD description. Per playbook H1 rule the homepage H1 = MAIN_SERVICE with no
+  location (national) — now exact.
+- Audited all three contact/pricing rules on the homepage: NO pricing terms anywhere;
+  email appears ONLY in JSON-LD schema metadata (never visible body copy, no mailto);
+  phone shown only as formatted (602) 829-0009 inside tel: links (hero/banner/footer/
+  mobile CTA) + the meta-description CTA. Compliant.
+- Modal webhook wiring finalized: single MODAL_WEBHOOK_URL constant at top of main.js
+  is the only wiring point; when set, modal POSTs the full Pabbly payload. Added a
+  parallel `phone_digits` field (digits-only) alongside formatted `phone` per playbook.
+  Still empty by design — NO webhook was seeded anywhere in workspace/webassets/brief.
+- Verified section order (Nav→Hero→WhyUs→About→Reviews→Banner→Services→Steps→FAQs→
+  Footer) and `node --check js/main.js` passes.
 
 ## Key Decisions / Conventions
 - Favicon = inline SVG fallback (no JS swap needed) since no favicons were provided.
