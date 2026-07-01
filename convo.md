@@ -126,6 +126,45 @@ legal pages (hub-and-spoke complete); section order correct on service pages; NO
 figures anywhere (only narrative "race to the bottom on price" re: competitors);
 `node --check js/main.js` passes.
 
+### Instruction 4 of 4 — DONE (final pass: images, 404, SEO, deploy-ready)
+Completed the final production pass. The site is now a fully deployable static site.
+
+Images (biggest gap — 14 refs, 0 files existed before this session):
+- Generated all 13 needed images via the env's Gemini-backed image tool
+  (`mcp__logo__generate_logo`) + decoded the returned base64 PNGs into `images/`:
+  7 heroes (hero-bg + one per service page), about-us, 4 service cards, og-image.
+- Tool outputs are **1024×1024 PNG** (square). No Python/sharp/cwebp in this Node env,
+  so images are kept as **.png** (browsers detect by content) and ALL HTML/CSS refs
+  were switched from `.webp` → `.png` (the pages referenced .webp before).
+- Updated `og:image:width`/`height` 1200×630 → 1024×1024 to match actual files.
+- Wrote `scripts/images_manifest.json` (business + per-image prompt/aspect/res) for
+  reproducibility; a note in it explains the .png-vs-.webp deviation + how to regenerate.
+- Total images ~15MB; logo stays `images/logo.jpg`.
+
+404 page:
+- `404.html` at ROOT (host serves on 404). Uses `.not-found` CSS class (already in
+  styles.css), H1 "Page Not Found", `noindex,follow`, shared nav/footer/modal, CTAs
+  back to home + call + free-strategy modal.
+
+SEO / support files verified:
+- All 10 pages: charset+viewport first, unique title/description/canonical/robots,
+  inline-SVG favicon, OG+Twitter (marketing pages), JSON-LD (ProfessionalService on
+  home, Service on the 6 service pages). Legal + 404 = `noindex,follow`.
+- `sitemap.xml` = 9 indexable pages (home + 6 services + 2 legal); 404 excluded.
+- `robots.txt` allows all, disallows /scripts/ + /.env, links sitemap.
+- `.gitignore` excludes .env only (images ARE committed — no build step).
+
+Booking widget: brief says booking = **no**, so none added (multi-step lead modal is
+the only lead-capture mechanism, present on every page).
+
+Final audit — all PASS:
+- Link checker: 204 internal link+asset refs across 10 pages ALL resolve; every
+  referenced image exists on disk.
+- No pricing figures anywhere (only narrative "race to the bottom on price").
+- Email only in homepage JSON-LD + 2 legal pages; NO mailto anywhere.
+- Phone only inside `tel:`/schema; visible display always `(602) 829-0009`.
+- All pages `<html lang="en">`; `node --check js/main.js` passes; no leftover placeholders.
+
 ## Key Decisions / Conventions
 - Favicon = inline SVG fallback (no JS swap needed) since no favicons were provided.
 - No Google Maps iframe provided → Footer **Layout B** (single centered column).
@@ -134,16 +173,20 @@ figures anywhere (only narrative "race to the bottom on price" re: competitors);
 - CSS/JS referenced via absolute paths (`/css/styles.css`, `/js/main.js`).
 - Accent color chosen deep teal per playbook "orange → deep teal/navy" guide.
 
-## TODO (future instructions)
-- [x] Homepage sections 3–9 with finalized conversion copy + generated reviews + FAQs.
-- [ ] Generate images (hero-bg, about-us, 4 service cards, banner, og-image) via
-      Gemini per playbook Step 6.6 (manifest + scripts), reference as `.webp`.
-      NOTE: this env also exposes an MCP logo/image generator — evaluate which to use.
-- [x] 6 service pages (full 10-section layout each, hub-and-spoke link back to `/`).
-- [x] Privacy Policy + Terms & Conditions pages.
-- [ ] 404.html.
-- [ ] Deployment.
+## TODO — ALL 4 INSTRUCTIONS COMPLETE
+- [x] Instr 1: scaffold + design system + shared nav/footer/modal.
+- [x] Instr 2: homepage (10 sections, conversion copy, reviews, FAQs, lead modal).
+- [x] Instr 3: 6 service pages + Privacy Policy + Terms & Conditions (hub-and-spoke).
+- [x] Instr 4: generated all 13 images (.png), 404.html, SEO/schema/sitemap/robots
+      verified, full link + rule audit, deploy-ready.
+
+## Remaining / optional (not requested by any instruction)
+- Real deployment to the host (GitHub Pages repo is `fenixwebdesign.github.io`) — pushing
+  to main would publish. Orchestrator manages branches/PRs, so left to that flow.
+- Wire `MODAL_WEBHOOK_URL` in js/main.js once a Pabbly (or other) webhook is provided.
+- Optional: reconvert images to true .webp for smaller payload if a converter becomes
+  available, then flip refs back .png → .webp (manifest documents this).
 
 ## How to continue
-Read this file + the playbook first. Build remaining pages reusing the shared nav,
-footer, and modal markup already in `index.html`. Keep `convo.md` updated each session.
+Site is complete and deployable as-is (static: HTML + css/ + js/ + images/). Read this
+file + the playbook first for any future changes. Keep `convo.md` updated each session.
