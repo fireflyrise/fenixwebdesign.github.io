@@ -91,6 +91,41 @@ Session 2026-07-01 refinements (Instruction 2 re-verified):
 - Verified section order (Nav→Hero→WhyUs→About→Reviews→Banner→Services→Steps→FAQs→
   Footer) and `node --check js/main.js` passes.
 
+### Instruction 3 of 4 — DONE (all 6 service pages + 2 legal pages built)
+Built each page as its own `[slug]/index.html` clean folder URL, reusing the exact
+shared nav / footer (Layout B) / mobile-CTA / multi-step modal markup from the homepage.
+
+Service pages (full fixed 10-section layout, hub-and-spoke back to `/` and siblings):
+- `/google-ads-management/`, `/facebook-ads-management/`, `/website-design/`,
+  `/painting-marketing/`, `/roofing-marketing/`, `/plumbing-marketing/`
+- Each: `<title>` = service name only (no business name, no location, national scope);
+  H1 (hero-label) = service name per H1 rule; meta desc 140–160 chars w/ phone CTA;
+  canonical; inline favicon SVG; OG + Twitter tags; **Service** JSON-LD schema
+  (@type Service, provider ProfessionalService, areaServed "United States").
+- Hero uses inline `background-image: linear-gradient(...) url('/images/hero-[slug].webp')`
+  (images NOT yet generated — Instruction 4).
+- Copy is visitor-first direct-response (pain→desire→fear→proof→CTA), tailored per
+  service. Trade pages (painting/roofing/plumbing) lean on urgency + "get found first".
+- About Us section on each links to sibling services (/website-design/, /google-ads-...);
+  Services section = 4 cards each linking to a sibling service; 4th card cross-promotes
+  the trade pages. 3 generated reviews (HTML-commented) + 6 anxiety-framework FAQs each.
+
+Legal pages (simplified layout: Nav → `<main class="legal-page">` → Footer, no hero):
+- `/privacy-policy/` — title "Privacy Policy | Fenix Web Design", H1 "Privacy Policy",
+  11 sections per playbook, `noindex,follow`. **Email mgarcia4@gmail.com appears here**
+  (allowed on legal pages only), phone in tel: link.
+- `/terms-and-conditions/` — title "Terms and Conditions | Fenix Web Design",
+  H1 "Terms and Conditions", 12 sections adapted for a marketing agency (added
+  Results/Performance + Third-Party Platforms sections; no on-site/address language
+  since national scope, no city/state/address in brief), `noindex,follow`. Email here.
+- Both dated "Last updated: July 1, 2026".
+
+Verification this session: all 8 pages exist; every internal href resolves (all point
+to existing folders + `/` + `/css/styles.css`); homepage links to all 6 services + both
+legal pages (hub-and-spoke complete); section order correct on service pages; NO pricing
+figures anywhere (only narrative "race to the bottom on price" re: competitors);
+`node --check js/main.js` passes.
+
 ## Key Decisions / Conventions
 - Favicon = inline SVG fallback (no JS swap needed) since no favicons were provided.
 - No Google Maps iframe provided → Footer **Layout B** (single centered column).
@@ -104,8 +139,8 @@ Session 2026-07-01 refinements (Instruction 2 re-verified):
 - [ ] Generate images (hero-bg, about-us, 4 service cards, banner, og-image) via
       Gemini per playbook Step 6.6 (manifest + scripts), reference as `.webp`.
       NOTE: this env also exposes an MCP logo/image generator — evaluate which to use.
-- [ ] 6 service pages (full 10-section layout each, hub-and-spoke link back to `/`).
-- [ ] Privacy Policy + Terms & Conditions pages.
+- [x] 6 service pages (full 10-section layout each, hub-and-spoke link back to `/`).
+- [x] Privacy Policy + Terms & Conditions pages.
 - [ ] 404.html.
 - [ ] Deployment.
 
